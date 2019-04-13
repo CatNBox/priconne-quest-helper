@@ -104,6 +104,7 @@ function figure_out_total_ingredients(all_recipe_maps_array)
 
     if (total_recipe.size > 0)
     {
+        var lineCnt = 0;
         for (let [item, value] of total_recipe)
         {
             // add table row start if first item
@@ -116,6 +117,16 @@ function figure_out_total_ingredients(all_recipe_maps_array)
             if (item_counter % 7 === 0 && item_counter !== 0)
             {
                 table_html += "</tr>";
+                
+                table_html += "<tr>";
+                for(var i=0; i<lineCnt; i++)
+                {
+                    table_html += "<th class =\"item-amt\">";
+                    table_html += "<input class=\"item-input notranslate\" type=\"number\" min=\"0\" max=\"99\" value=\"0\">";
+                    table_html += "</th>";
+                }
+                table_html += "</tr>";
+                lineCnt = 0;
 
                 table_html += "<tr>";
             }
@@ -137,10 +148,22 @@ function figure_out_total_ingredients(all_recipe_maps_array)
             //table_html += "<div class=\"requested-item-button-text\">\u00D7" + value + "</div>";
 
             item_counter++;
+            lineCnt++;
         }
-        // close table row
+        // close table row       
+        
+        table_html += "<tr>";
+        for(var i=0; i<lineCnt; i++)
+        {
+            table_html += "<th class =\"item-amt\">";
+            table_html += "<input class=\"item-input notranslate\" type=\"number\" min=\"0\" max=\"99\" value=\"0\">";
+            table_html += "</th>";
+        }
         table_html += "</tr>";
-        //table_html += "<tr class=\"spacing\"></tr>";
+        lineCnt = 0;
+        
+        table_html += "</tr>";
+        table_html += "<tr class=\"spacing\"></tr>";
     }
     table_html += "</tbody>";
 
