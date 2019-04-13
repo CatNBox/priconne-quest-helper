@@ -24,7 +24,7 @@ function build_requested_item_table(requested_items_map)
                 for(var i=0; i < item_counter; i++)
                 {
                     table_html += "<th class =\"note\">";
-                    table_html += "<label></label>";
+                    table_html += "<input type=\"text\" id=\"memo\">";
                     table_html += "</th>";
                 }
                 table_html += "</tr>";
