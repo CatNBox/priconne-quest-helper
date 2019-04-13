@@ -19,6 +19,15 @@ function build_requested_item_table(requested_items_map)
             if (item_counter % 7 === 0 && item_counter !== 0)
             {
                 table_html += "</tr>";
+                
+                table_html += "<tr>";
+                for(var i=0; i < item_counter; i++)
+                {
+                    table_html += "<th class =\"note\">";
+                    table_html += "<label></label>";
+                    table_html += "</th>";
+                }
+                table_html += "</tr>";
 
                 table_html += "<tr>";
             }
