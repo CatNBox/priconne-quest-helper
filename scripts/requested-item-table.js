@@ -20,14 +20,14 @@ function build_requested_item_table(requested_items_map)
             {
                 table_html += "</tr>";
                 
-                table_html += "<tr>";
-                for(var i=0; i < item_counter; i++)
-                {
-                    table_html += "<th class =\"item-amt\">";
-                    table_html += "<input class=\"item-input notranslate\" type=\"number\" min=\"0\" max=\"99\" value=\"0\">";
-                    table_html += "</th>";
-                }
-                table_html += "</tr>";
+                //table_html += "<tr>";
+                //for(var i=0; i < item_counter; i++)
+                //{
+                //    table_html += "<th class =\"item-amt\">";
+                //    table_html += "<input class=\"item-input notranslate\" type=\"number\" min=\"0\" max=\"99\" value=\"0\">";
+                //    table_html += "</th>";
+                //}
+                //table_html += "</tr>";
 
                 table_html += "<tr>";
             }
